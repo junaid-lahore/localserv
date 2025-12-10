@@ -32,6 +32,10 @@ export const blogPosts: BlogPost[] = [
       imageUrl: "/neha-dogra.jpg",
     },
     categories: ["Announcement", "Local Services", "AI"],
+  featuredImage: {
+    src: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    alt: "People working on laptops",
+  },
     content: (
       <>
         <p>In Los Angeles, booking a simple service still feels like it's stuck in the 2000s. Endless calls. Vanishing quotes. Mysterious price jumps.</p>
@@ -125,6 +129,10 @@ export const blogPosts: BlogPost[] = [
       imageUrl: "/neha-dogra.jpg",
     },
     categories: ["AI", "Local Services", "Future"],
+  featuredImage: {
+    src: "https://static.databutton.com/public/6d2026dc-40c8-4858-b8dc-b265ab48e64d/1-%20Feature%20Image-min%20-blog3.webp",
+    alt: "AI powered tools",
+  },
     content: (
         <>
             <p>The local service industry, from plumbers to dog walkers, has long been overdue for a technological facelift. While other sectors have embraced digital transformation, finding and booking local services often remains a clunky, inefficient process. But that's all changing. Artificial Intelligence (AI) is stepping in to make the entire experience faster, smarter, and safer for both consumers and service providers.</p>
@@ -262,3 +270,6 @@ export const blogPosts: BlogPost[] = [
     ),
   },
 ];
+
+// Compatibility export for components expecting `blogData`
+export const blogData = blogPosts;

@@ -3,16 +3,25 @@
 
 
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { MapPin, Phone, Mail, MessageSquare } from 'lucide-react';
 
 export interface Props {}
 
 export function Footer({}: Props) {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleNavigate = (page: string) => {
-    navigate(`/${page}`);
+    // Scroll to in-page anchor if it exists, otherwise route
+    if (page === 'join-waitlist') {
+      const el = document.getElementById('join-waitlist');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+        return;
+      }
+    }
+    router.push(`/${page}`);
   };
 
   return (
@@ -52,20 +61,20 @@ export function Footer({}: Props) {
             <h3 className="font-semibold text-lg mb-4 text-white">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <button 
-                  onClick={() => handleNavigate('')}
+                <Link 
+                  href="/"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Home
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => handleNavigate('about')}
+                <Link 
+                  href="/about"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   About
-                </button>
+                </Link>
               </li>
               <li>
                 <button 
@@ -76,12 +85,12 @@ export function Footer({}: Props) {
                 </button>
               </li>
               <li>
-                <button 
-                  onClick={() => handleNavigate('contact')}
+                <Link 
+                  href="/contact"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Contact
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
@@ -91,12 +100,12 @@ export function Footer({}: Props) {
             <h3 className="font-semibold text-lg mb-4 text-white">Services</h3>
             <ul className="space-y-3">
               <li>
-                <button 
-                  onClick={() => handleNavigate('industries')}
+                <Link 
+                  href="/industries"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Industries
-                </button>
+                </Link>
               </li>
               <li>
                 <button 
@@ -114,20 +123,20 @@ export function Footer({}: Props) {
             <h3 className="font-semibold text-lg mb-4 text-white">Legal</h3>
             <ul className="space-y-3">
               <li>
-                <button 
-                  onClick={() => handleNavigate('privacy-policy')}
+                <Link 
+                  href="/privacy-policy"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Privacy Policy
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => handleNavigate('terms-conditions')}
+                <Link 
+                  href="/terms-conditions"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Terms & Conditions
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

@@ -1,4 +1,5 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { APP_ID } from "@/constants";
 
 type Theme = "dark" | "light" | "system";
 
@@ -21,17 +22,16 @@ const initialState: ThemeProviderState = {
 export const ThemeProviderContext =
   createContext<ThemeProviderState>(initialState);
 
-declare const __APP_ID__: string;
-
 export function ThemeProvider({
   children,
   defaultTheme = "system",
-  storageKey = `databutton-${__APP_ID__}-ui-theme`,
+  storageKey = `databutton-${APP_ID || "app"}-ui-theme`,
   ...props
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme,
-  );
+  const [theme, setTheme] = useState<Theme>(() => {
+    if (typeof window === "undefined") return defaultTheme;
+    return (localStorage.getItem(storageKey) as Theme) || defaultTheme;
+  });
 
   useEffect(() => {
     const root = window.document.documentElement;
