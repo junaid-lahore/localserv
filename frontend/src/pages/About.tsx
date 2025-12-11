@@ -4,7 +4,7 @@ import { Footer } from 'components/Footer';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import { 
   Target, 
   Eye, 
@@ -32,7 +32,7 @@ import {
 import { WaitlistForm } from "components/WaitlistForm";
 
 export default function About() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [activeSection, setActiveSection] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [hoveredComparison, setHoveredComparison] = useState<number | null>(null);
@@ -50,7 +50,7 @@ export default function About() {
 
   // Function to navigate to contact page
   const goToContact = () => {
-    navigate('/contact');
+    router.push('/contact');
   };
 
   // Handle scroll for parallax effects
