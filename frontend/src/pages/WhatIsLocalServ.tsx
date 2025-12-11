@@ -76,10 +76,9 @@ const WhatIsLocalServ: React.FC = () => {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <div
-          className="prose prose-lg max-w-none dark:prose-invert"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+        <article className="prose prose-lg max-w-none dark:prose-invert">
+          {post.content}
+        </article>
       </BlogLayout>
     </>
   );

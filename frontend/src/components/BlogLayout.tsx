@@ -51,8 +51,8 @@ const BlogLayout: React.FC<Props> = ({ children, post }) => {
     .filter((p) => p.id !== post.id)
     .sort(
       (a, b) =>
-        new Date(b.date).getTime() -
-        new Date(a.date).getTime(),
+        new Date(b.publishedDate).getTime() -
+        new Date(a.publishedDate).getTime(),
     )
     .slice(0, 3);
 

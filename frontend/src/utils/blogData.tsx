@@ -7,6 +7,7 @@ export interface BlogPost {
   excerpt: string;
   path: string;
   date: string;
+  publishedDate?: string;
   author?: {
     name: string;
     imageUrl?: string;
@@ -27,6 +28,7 @@ export const blogPosts: BlogPost[] = [
     path: "/what-is-local-serv",
     excerpt: "Discover LocalServ, the first AI-powered mobile services platform in Los Angeles. Get verified offers, instant bookings, and real rewards for every job you book.",
     date: "2024-10-27",
+  publishedDate: "2024-10-27",
     author: {
       name: "Neha Dogra",
       imageUrl: "/neha-dogra.jpg",
@@ -124,6 +126,7 @@ export const blogPosts: BlogPost[] = [
     path: "/why-ai-is-the-future-of-local-services",
     excerpt: "Explore how AI is revolutionizing the local service industry by making it faster, smarter, and safer for everyone involved.",
     date: "2024-10-24",
+  publishedDate: "2024-10-24",
     author: {
       name: "Neha Dogra",
       imageUrl: "/neha-dogra.jpg",
@@ -158,6 +161,7 @@ export const blogPosts: BlogPost[] = [
     path: "/car-detailing-pricing",
     excerpt: "Discover how LocalServ eliminates advertising waste and hidden fees to bring transparent, fair pricing to car detailing in Los Angeles.",
     date: "2025-11-28",
+  publishedDate: "2025-11-28",
     author: {
       name: "LocalServ Team",
       imageUrl: "/neha-dogra.jpg",
@@ -266,6 +270,37 @@ export const blogPosts: BlogPost[] = [
 
         <h2>Join the LocalServ Waitlist</h2>
         <p>Be among the first to experience AI-powered service booking when LocalServ launches in Los Angeles.</p>
+      </>
+    ),
+  },
+  {
+    id: 4,
+    title: "Professional Auto Detailing vs. DIY: Which Gives You Better Results in LA?",
+    slug: "professional-auto-detailing-vs-diy-la",
+    path: "/professional-auto-detailing-vs-diy-la",
+    excerpt:
+      "In Los Angeles, cars are part of the city's identity. See whether DIY or professional detailing delivers better long-term value.",
+    date: "2025-12-02",
+    publishedDate: "2025-12-02",
+    author: {
+      name: "LocalServ Team",
+      imageUrl: "/neha-dogra.jpg",
+    },
+    categories: ["Car Detailing", "DIY vs Professional", "Los Angeles"],
+    featuredImage: {
+      src: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      alt: "Professional car detailing service",
+    },
+    content: (
+      <>
+        <p>
+          Professional detailing brings expertise, equipment, and consistent results,
+          while DIY can save money up front but often misses deep cleaning and protection.
+        </p>
+        <p>
+          In LA&apos;s climate and traffic, professional work typically extends paint and interior life,
+          saving on long-term reconditioning. DIY shines for quick refreshes, but pros win for durability.
+        </p>
       </>
     ),
   },
