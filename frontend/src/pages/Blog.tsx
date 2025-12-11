@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { blogData } from "utils/blogData";
 import {
   Card,
@@ -207,7 +207,7 @@ const Blog: React.FC = () => {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
             {filteredPosts.map((post, index) => (
               <Link
-                to={post.path}
+                href={post.path}
                 key={post.id}
                 className="block group"
                 style={{

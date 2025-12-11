@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Header } from "components/Header";
 import { Footer } from "components/Footer";
 import { Input } from "@/components/ui/input";
@@ -22,7 +23,8 @@ interface Props {
 
 const BlogLayout: React.FC<Props> = ({ children, post }) => {
   const [headings, setHeadings] = useState<Heading[]>([]);
-  const location = useLocation();
+  const pathname = usePathname();
+  const location = { pathname };
 
   useEffect(() => {
     const contentEl = document.querySelector(".blog-content");
@@ -49,21 +51,10 @@ const BlogLayout: React.FC<Props> = ({ children, post }) => {
     .filter((p) => p.id !== post.id)
     .sort(
       (a, b) =>
-        new Date(b.publishedDate).getTime() -
-        new Date(a.publishedDate).getTime(),
+        new Date(b.date).getTime() -
+        new Date(a.date).getTime(),
     )
     .slice(0, 3);
-
-  const floatingVariants = {
-    animate: {
-      y: [-10, 10, -10],
-      transition: {
-        duration: 8,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background text-foreground isolate">
@@ -142,10 +133,13 @@ const BlogLayout: React.FC<Props> = ({ children, post }) => {
               <h3 className="font-bold text-lg mb-4 text-gray-800">Other Blog Posts</h3>
               <ul className="space-y-4">
                 {otherPosts.length > 0 ? (
-                  otherPosts.map(post => (
-                    <li key={post.id}>
-                      <Link to={post.path} className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors duration-300">
-                        {post.title}
+                  otherPosts.map(blogPost => (
+                    <li key={blogPost.id}>
+                      <Link 
+                        href={blogPost.path} 
+                        className="text-sm font-medium text-gray-600 hover:text-blue-600 transition-colors duration-300"
+                      >
+                        {blogPost.title}
                       </Link>
                     </li>
                   ))

@@ -1,5 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import { useRouter } from 'next/router';
 import {
   motion,
   useScroll,
@@ -20,7 +21,8 @@ import { useRef } from "react";
 import { blogData } from "utils/blogData";
 
 export default function Blogs() {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  const router = useRouter();
   const heroRef = useRef(null);
   const isHeroInView = useInView(heroRef, { once: true, amount: 0.3 });
 
@@ -120,7 +122,7 @@ export default function Blogs() {
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ staggerChildren: 0.2 }}
                   className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100 cursor-pointer"
-                  onClick={() => navigate(blogPost.path)}
+                  onClick={() => router.push(blogPost.path)}
                 >
                   <div className="lg:flex items-center">
                     <div className="lg:w-1/2 overflow-hidden h-full">

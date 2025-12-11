@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
@@ -17,7 +17,7 @@ export const Header: React.FC = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center justify-between px-4">
         {/* Logo with Transparent Background and Beta */}
-        <Link to="/" className="flex items-center space-x-2">
+        <Link href="/" className="flex items-center space-x-2">
           <img 
             src="https://static.databutton.com/public/6d2026dc-40c8-4858-b8dc-b265ab48e64d/EraXpert  (17).png" 
             alt="Local Serv Logo" 
@@ -32,7 +32,7 @@ export const Header: React.FC = () => {
           {navLinks.map((link) => (
             <Link
               key={link.name}
-              to={link.path}
+              href={link.path}
               className="text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
             >
               {link.name}
@@ -62,7 +62,7 @@ export const Header: React.FC = () => {
                 {navLinks.map((link) => (
                   <Link
                     key={link.name}
-                    to={link.path}
+                    href={link.path}
                     className="text-lg font-medium text-foreground transition-colors hover:text-primary"
                   >
                     {link.name}

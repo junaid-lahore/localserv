@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -137,7 +137,7 @@ export default function Contact() {
             
             {/* Breadcrumb */}
             <div className="flex items-center justify-center space-x-2 text-gray-600 animate-fade-in-delay">
-              <Link to="/" className="hover:text-purple-600 transition-colors">
+              <Link href="/" className="hover:text-purple-600 transition-colors">
                 Home
               </Link>
               <ChevronRight className="w-4 h-4" />
@@ -315,7 +315,7 @@ export default function Contact() {
                       />
                       <div className="text-sm">
                         <label htmlFor="terms" className="text-gray-700 leading-relaxed cursor-pointer hover:text-purple-600 transition-colors duration-300">
-                          I Agree to <Link to="/terms" className="text-purple-600 hover:underline font-medium hover:text-purple-700 transition-colors">terms & Condition</Link>
+                          I Agree to <Link href="/terms" className="text-purple-600 hover:underline font-medium hover:text-purple-700 transition-colors">terms & Condition</Link>
                         </label>
                         {errors.agreeTerms && (
                           <p className="text-red-500 text-sm mt-1 animate-shake">{errors.agreeTerms}</p>

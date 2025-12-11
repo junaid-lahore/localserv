@@ -17854,13 +17854,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@remix-run/router@npm:1.10.0":
-  version: 1.10.0
-  resolution: "@remix-run/router@npm:1.10.0"
-  checksum: 062c7203c0e5f40f22746e1deb3e8063a3548868bfad91edc3dc8457fe3e3bc952f4d5c266f4481a7627bae5815c8d5eb9c987b1951a259b2697ccd5ed35e3da
-  languageName: node
-  linkType: hard
-
 "@remix-run/router@npm:1.22.0":
   version: 1.22.0
   resolution: "@remix-run/router@npm:1.22.0"
@@ -42925,7 +42918,6 @@ __metadata:
     react-remark: "npm:2.1.0"
     react-resizable-panels: "npm:^2.1.2"
     react-rnd: "npm:^10.5.2"
-    react-router-dom: "npm:6.17.0"
     react-select: "npm:5.8.0"
     react-shadow: "npm:20.6.0"
     react-signature-canvas: "npm:1.1.0-alpha.2"
@@ -51903,19 +51895,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-router-dom@npm:6.17.0":
-  version: 6.17.0
-  resolution: "react-router-dom@npm:6.17.0"
-  dependencies:
-    "@remix-run/router": "npm:1.10.0"
-    react-router: "npm:6.17.0"
-  peerDependencies:
-    react: ">=16.8"
-    react-dom: ">=16.8"
-  checksum: c22e66a2b8d5678434039fe4123f76ab85e6e46d526fbf4b29b4b6423c5589759535d56afa51a4f598b5c15be7e47f2d0d409cd7a40f21c0ecdc59605b7f4bfa
-  languageName: node
-  linkType: hard
-
 "react-router-dom@npm:^6.28.0":
   version: 6.29.0
   resolution: "react-router-dom@npm:6.29.0"
@@ -51926,17 +51905,6 @@ __metadata:
     react: ">=16.8"
     react-dom: ">=16.8"
   checksum: f89f922006b6ff896ba81d82088812e42ae56790ccb838e7041eebe0f7d36ac2a4eca56512a422da4249cca23f389f998e84cf8ff868d4a83defd72951b8fbf9
-  languageName: node
-  linkType: hard
-
-"react-router@npm:6.17.0":
-  version: 6.17.0
-  resolution: "react-router@npm:6.17.0"
-  dependencies:
-    "@remix-run/router": "npm:1.10.0"
-  peerDependencies:
-    react: ">=16.8"
-  checksum: f940ee641c87f7c179f6547b65c6b055f916d4b26b30f9b964cb1628f39b1899f25e4b92285427660c5444809c04dcc42dd976d9ce12ed6ed13b1be50a29c691
   languageName: node
   linkType: hard
 

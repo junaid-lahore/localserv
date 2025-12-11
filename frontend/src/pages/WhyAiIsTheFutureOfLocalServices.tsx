@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { BlogLayout } from "components/BlogLayout";
 import { blogData } from "utils/blogData";
 import { Helmet } from "react-helmet";
@@ -68,7 +68,7 @@ const WhyAiIsTheFutureOfLocalServices: React.FC = () => {
         <Breadcrumb className="mb-8">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <Link to="/blog">Blog</Link>
+              <Link href="/blog">Blog</Link>
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
