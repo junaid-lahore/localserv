@@ -9,6 +9,8 @@ import { blogData } from "utils/blogData";
 import { motion } from "framer-motion";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { BlogPost } from "utils/blogData";
+const m: any = motion;
+const SA: any = ScrollArea;
 
 interface Heading {
   id: string;
@@ -16,12 +18,7 @@ interface Heading {
   level: number;
 }
 
-interface Props {
-  children: React.ReactNode;
-  post: BlogPost;
-}
-
-const BlogLayout: React.FC<Props> = ({ children, post }) => {
+const BlogLayout = ({ children, post }: any) => {
   const [headings, setHeadings] = useState<Heading[]>([]);
   const pathname = usePathname();
   const location = { pathname };
@@ -66,23 +63,23 @@ const BlogLayout: React.FC<Props> = ({ children, post }) => {
             <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-gradient-to-br from-blue-200 to-cyan-200 opacity-20 rounded-full filter blur-3xl animate-pulse animation-delay-2000"></div>
         </div>
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <motion.p 
+            <m.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-sm font-bold uppercase tracking-wider text-gradient-smooth mb-2"
             >
               Local Serv Blog
-            </motion.p>
-            <motion.h1 
+            </m.p>
+            <m.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
               className="text-3xl md:text-4xl font-bold leading-tight text-gray-900 px-4 sm:px-8 md:px-16 lg:px-32"
             >
               {post.title}
-            </motion.h1>
-             <motion.div
+            </m.h1>
+             <m.div
                 className="h-1.5 bg-gradient-to-r from-purple-500 via-blue-500 to-green-500 rounded-full mx-auto mt-6"
                 initial={{ width: 0 }}
                 animate={{ width: "100px" }}
@@ -97,7 +94,7 @@ const BlogLayout: React.FC<Props> = ({ children, post }) => {
           <div className="space-y-8">
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50">
               <h3 className="font-bold text-lg mb-4 text-gray-800">Jump To</h3>
-              <ScrollArea className="h-60 [mask-image:linear-gradient(to_bottom,black_90%,transparent)] jump-to-scrollbar">
+              <SA className="h-60 [mask-image:linear-gradient(to_bottom,black_90%,transparent)] jump-to-scrollbar">
                 <ul className="space-y-3 pr-4">
                   {headings.length > 0 ? (
                     headings.map((heading) => (
@@ -116,7 +113,7 @@ const BlogLayout: React.FC<Props> = ({ children, post }) => {
                     </li>
                   )}
                 </ul>
-              </ScrollArea>
+              </SA>
             </div>
           </div>
         </aside>

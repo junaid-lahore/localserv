@@ -1,7 +1,7 @@
 import React from "react";
 import { BlogLayout } from "components/BlogLayout";
 import { blogData } from "utils/blogData";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -11,7 +11,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import {
-  Calendar,
+  Calendar as CalendarIcon,
   User,
   Clock,
   Share2
@@ -33,7 +33,7 @@ const CarDetailingPricing: React.FC = () => {
 
   return (
     <BlogLayout post={post}>
-      <Helmet>
+      <Head>
         <title>{post.title} | LocalServ Blog</title>
         <meta name="description" content={post.excerpt} />
         <meta property="og:title" content={post.title} />
@@ -44,7 +44,7 @@ const CarDetailingPricing: React.FC = () => {
         <meta name="twitter:title" content={post.title} />
         <meta name="twitter:description" content={post.excerpt} />
         <meta name="twitter:image" content={post.featuredImage.src} />
-      </Helmet>
+      </Head>
 
       <div className="max-w-4xl mx-auto">
         {/* Breadcrumb */}
@@ -72,7 +72,7 @@ const CarDetailingPricing: React.FC = () => {
               <span>{post.author.name}</span>
             </div>
             <div className="flex items-center gap-2">
-              <Calendar className="w-4 h-4" />
+              {React.createElement(CalendarIcon, { className: "w-4 h-4" })}
               <time dateTime={post.publishedDate}>{formattedDate}</time>
             </div>
             <div className="flex items-center gap-2">

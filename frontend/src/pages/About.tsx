@@ -549,7 +549,7 @@ export default function About() {
                         {value.icon}
                       </div>
                       <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">{value.title}</h4>
-                      <p className="text-gray-600 leading-relaxed relative z-10 text-sm">{value.descriptionc}</p>
+                      <p className="text-gray-600 leading-relaxed relative z-10 text-sm">{value.description}</p>
                       
                       {/* Subtle shine effect */}
                       <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-full transition-all duration-1000"></div>

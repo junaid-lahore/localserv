@@ -25,6 +25,12 @@
       "brain": [
         "./src/brain"
       ],
+      "react-router-dom": [
+        "./shims/react-router-dom.ts"
+      ],
+      "react-router-dom/server": [
+        "./shims/react-router-dom-server.ts"
+      ],
       "types": [
         "./src/brain/data-contracts.ts"
       ],

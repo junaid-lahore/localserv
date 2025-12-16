@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight, Calendar, Clock, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, Clock, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { blogData } from "utils/blogData";
 
@@ -20,6 +20,7 @@ export default function BlogSlider({}: Props) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
+  const [hasMounted, setHasMounted] = useState(false);
   const carouselRef = useRef<HTMLDivElement>(null);
   const autoSlideRef = useRef<NodeJS.Timeout | null>(null);
   const pauseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -32,12 +33,13 @@ export default function BlogSlider({}: Props) {
       if (window.innerWidth >= 768) return 2;  // md screens
       return 1; // sm screens
     }
-    return 3; // default
+    return 1; // default (SSR-safe to avoid hydration mismatches)
   };
 
   const [visibleCards, setVisibleCards] = useState(getVisibleCards());
 
   useEffect(() => {
+    setHasMounted(true);
     const handleResize = () => {
       setVisibleCards(getVisibleCards());
     };
@@ -165,25 +167,25 @@ export default function BlogSlider({}: Props) {
             <ChevronRight className="w-6 h-6 text-gray-600" />
           </button>
 
-          {/* Cards Container */}
-          <div className="overflow-hidden mx-8">
-            <div 
-              ref={carouselRef}
-              className="flex transition-transform duration-300 ease-in-out"
-              style={{
-                transform: `translateX(-${currentIndex * (100 / visibleCards)}%)`
-              }}
-            >
-              {blogData.map((post) => (
-                <div
-                  key={post.id}
-                  className="flex-shrink-0 px-3"
-                  style={{ width: `${100 / visibleCards}%` }}
-                >
-                  <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
-                       onClick={() => handleNavigateToBlog(post.slug)}>
-                    {/* Image */}
-                    <div className="relative overflow-hidden">
+        {/* Cards Container */}
+        <div className="overflow-hidden mx-8">
+          <div 
+            ref={carouselRef}
+            className="flex transition-transform duration-300 ease-in-out"
+            style={{
+              transform: hasMounted ? `translateX(-${currentIndex * (100 / visibleCards)}%)` : 'translateX(0%)'
+            }}
+          >
+            {blogData.map((post) => (
+              <div
+                key={post.id}
+                className="flex-shrink-0 px-3"
+                style={{ width: hasMounted ? `${100 / visibleCards}%` : '100%' }}
+              >
+                <div className="bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden group cursor-pointer"
+                     onClick={() => handleNavigateToBlog(post.slug)}>
+                  {/* Image */}
+                  <div className="relative overflow-hidden">
                       <img
                         src={post.featuredImage.src}
                         alt={post.featuredImage.alt}
@@ -201,8 +203,8 @@ export default function BlogSlider({}: Props) {
                       {/* Meta Info */}
                       <div className="flex items-center space-x-4 text-sm text-gray-500 mb-3">
                         <div className="flex items-center space-x-1">
-                          <Calendar className="w-4 h-4" />
-                          <span>{post.date}</span>
+                          {React.createElement(CalendarIcon, { className: "w-4 h-4" })}
+                          <span>{post.publishedDate}</span>
                         </div>
                         <div className="flex items-center space-x-1">
                           <Clock className="w-4 h-4" />
@@ -234,17 +236,18 @@ export default function BlogSlider({}: Props) {
 
           {/* Dots Indicator */}
           <div className="flex justify-center mt-8 space-x-2">
-            {Array.from({ length: maxIndex + 1 }).map((_, index) => (
-              <button
-                key={index}
-                onClick={() => handleDotClick(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentIndex 
-                    ? 'bg-blue-600 scale-110' 
-                    : 'bg-gray-300 hover:bg-gray-400'
-                }`}
-              />
-            ))}
+            {hasMounted &&
+              Array.from({ length: maxIndex + 1 }).map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleDotClick(index)}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentIndex 
+                      ? 'bg-blue-600 scale-110' 
+                      : 'bg-gray-300 hover:bg-gray-400'
+                  }`}
+                />
+              ))}
           </div>
         </div>
 

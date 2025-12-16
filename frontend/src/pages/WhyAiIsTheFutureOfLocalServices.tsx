@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { BlogLayout } from "components/BlogLayout";
 import { blogData } from "utils/blogData";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 import { Button } from "@/components/ui/button";
 import {
   Breadcrumb,
@@ -36,11 +36,11 @@ const WhyAiIsTheFutureOfLocalServices: React.FC = () => {
 
   return (
     <>
-      <Helmet>
+      <Head>
         <title>{post.title}</title>
         <meta name="description" content={post.excerpt} />
         <link rel="canonical" href={`https://www.localserv.ai${post.path}`} />
-      </Helmet>
+      </Head>
       <BlogLayout post={post}>
         <div className="flex flex-wrap items-center justify-between mb-8 text-sm text-gray-500">
           <div className="flex items-center space-x-4">

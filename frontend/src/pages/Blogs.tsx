@@ -12,7 +12,7 @@ import { Footer } from "components/Footer";
 import { Button } from "@/components/ui/button";
 import {
   ArrowRight,
-  Calendar,
+  Calendar as CalendarIcon,
   User,
   MessageSquare,
   Sparkles,
@@ -168,7 +168,7 @@ export default function Blogs() {
                             <span>{blogPost.author.name}</span>
                           </div>
                           <div className="flex items-center">
-                            <Calendar className="w-4 h-4 mr-2 text-purple-500" />
+                            {React.createElement(CalendarIcon, { className: "w-4 h-4 mr-2 text-purple-500" })}
                             <span>{blogPost.publishedDate}</span>
                           </div>
                         </div>

@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { useEffect } from "react";
 import { Toaster } from "@/components/ui/sonner";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 
 /**
  * A provider wrapping the whole app.
@@ -24,12 +24,12 @@ export const AppProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <>
-      <Helmet>
+      <Head>
         <meta
           name="google-site-verification"
           content="vRhOc7O-ypjC256W-0umKyG5Q2ha6I_kRC6-jYCagC0"
         />
-      </Helmet>
+      </Head>
       <div className="flex flex-col min-h-screen bg-background font-['Inter']">
         {children}
       </div>

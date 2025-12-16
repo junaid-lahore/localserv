@@ -1,7 +1,7 @@
 import React from "react";
 import { BlogLayout } from "components/BlogLayout";
 import { blogData } from "utils/blogData";
-import { Helmet } from "react-helmet";
+import Head from "next/head";
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -11,7 +11,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import {
-  Calendar,
+  Calendar as CalendarIcon,
   Clock,
   Share2
 } from "lucide-react";
@@ -32,10 +32,10 @@ const ProfessionalAutoDetailingVsDiyLa: React.FC = () => {
 
   return (
     <BlogLayout post={post}>
-      <Helmet>
+      <Head>
         <title>{post.title} | LocalServ Blog</title>
         <meta name="description" content={post.excerpt} />
-      </Helmet>
+      </Head>
 
       {/* Breadcrumb */}
       <div className="mb-6">
@@ -59,7 +59,7 @@ const ProfessionalAutoDetailingVsDiyLa: React.FC = () => {
       {/* Article Metadata */}
       <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400 mb-8 pb-8 border-b border-gray-200 dark:border-gray-700">
         <div className="flex items-center gap-2">
-          <Calendar className="w-4 h-4" />
+          {React.createElement(CalendarIcon, { className: "w-4 h-4" })}
           <span>{formattedDate}</span>
         </div>
         <div className="flex items-center gap-2">

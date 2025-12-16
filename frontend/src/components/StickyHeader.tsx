@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 
-export const StickyHeader: React.FC = () => {
+export const StickyHeader = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Industries", path: "/industries" },

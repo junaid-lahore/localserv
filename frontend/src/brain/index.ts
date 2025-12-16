@@ -34,7 +34,8 @@ const constructClient = () => {
       if (isDeployedToCustomApiPath) {
         // Remove /routes/ segment from path if the api is deployed and made accessible through
         // another domain with custom path different from the databutton proxy path
-        return fetch(url.replace(API_PREFIX_PATH + "/routes", API_PREFIX_PATH), options);
+        const urlStr = typeof url === "string" ? url : url.toString();
+        return fetch(urlStr.replace(API_PREFIX_PATH + "/routes", API_PREFIX_PATH), options);
       }
 
       return fetch(url, options);

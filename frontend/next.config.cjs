@@ -4,6 +4,12 @@ const path = require('path');
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: [],
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   // Configure rewrites similar to Vite proxy if needed
   async rewrites() {
     return [

@@ -1,6 +1,5 @@
 import React from 'react';
 import { renderToString } from 'react-dom/server';
-import { StaticRouter } from 'react-router-dom/server';
 import fs from 'fs';
 import path from 'path';
 
@@ -36,9 +35,7 @@ const Component = getComponent(route);
 if (Component) {
   const appHtml = renderToString(
     <React.StrictMode>
-      <StaticRouter location={route}>
-        <Component />
-      </StaticRouter>
+      <Component />
     </React.StrictMode>
   );
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, User, Clock } from 'lucide-react';
+import { Calendar as CalendarIcon, User, Clock } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 interface Props {
@@ -17,7 +17,7 @@ export const BlogHero = ({ title, author, date, readTime }: Props) => {
           
         >
           <Badge className="mb-6 bg-gray-100 text-gray-600 border-gray-200 text-sm px-4 py-2">
-            <Calendar className="w-4 h-4 mr-2" />
+            {React.createElement(CalendarIcon, { className: "w-4 h-4 mr-2" })}
             {date}
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
