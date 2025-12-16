@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { StickyHeader } from 'components/StickyHeader';
 import { Footer } from 'components/Footer';
 import {

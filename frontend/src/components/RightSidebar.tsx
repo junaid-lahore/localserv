@@ -1,12 +1,12 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { useNavigate } from 'react-router-dom';
+import { useRouter } from 'next/router';
 
 export const RightSidebar = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const handleJoinWaitlist = () => {
-    navigate('/#join-waitlist');
+    router.push('/#join-waitlist');
   };
 
   return (
