@@ -9011,19 +9011,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@firebase/app@npm:^0.11.1":
-  version: 0.11.5
-  resolution: "@firebase/app@npm:0.11.5"
-  dependencies:
-    "@firebase/component": "npm:0.6.13"
-    "@firebase/logger": "npm:0.4.4"
-    "@firebase/util": "npm:1.11.0"
-    idb: "npm:7.1.1"
-    tslib: "npm:^2.1.0"
-  checksum: d674de9c1a959f95419cd843df6c3a3ede822ef1a3b20556505fd27f735faa7eb2830294e18cdf081a6fde8fdeb79fe72f083d9accb9f2f827b6a7dce0841591
-  languageName: node
-  linkType: hard
-
 "@firebase/app@npm:^0.7.5":
   version: 0.7.33
   resolution: "@firebase/app@npm:0.7.33"
@@ -9122,16 +9109,6 @@ __metadata:
     "@firebase/util": "npm:1.3.0"
     tslib: "npm:^2.1.0"
   checksum: 02f8f561ceb62e79e6f8d79fce3689702682bd9f9debbecc74fdea6ad9bce627d1a9895d552566ec954b51cd660d9666b3680e7c3ec16fa9c1d4b7a123e220aa
-  languageName: node
-  linkType: hard
-
-"@firebase/component@npm:0.6.13":
-  version: 0.6.13
-  resolution: "@firebase/component@npm:0.6.13"
-  dependencies:
-    "@firebase/util": "npm:1.11.0"
-    tslib: "npm:^2.1.0"
-  checksum: a626aca788f78d923dc0caf23497d97679295a6044a4c012ff130aa2bac632237ac0f80cb67aa3a3fc6e6ea99c1492b7ffc11a08a46c03e23e253e6cf88917ad
   languageName: node
   linkType: hard
 
@@ -9357,15 +9334,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@firebase/logger@npm:0.4.4":
-  version: 0.4.4
-  resolution: "@firebase/logger@npm:0.4.4"
-  dependencies:
-    tslib: "npm:^2.1.0"
-  checksum: 0493468960c1243bad71ff932fbf89c17870b07cd3cb25b9565661689e52e93948e43cbd423f9903bdd80c40b98c28e4b2d85698e9ef09d4c59e23beb9140bda
-  languageName: node
-  linkType: hard
-
 "@firebase/messaging-compat@npm:0.2.6":
   version: 0.2.6
   resolution: "@firebase/messaging-compat@npm:0.2.6"
@@ -9515,15 +9483,6 @@ __metadata:
   peerDependencies:
     "@firebase/app": 0.x
   checksum: 33a204e224b2cf378f91add3c62ea243fe52c2f5dbf482f5728e618ba25604c9015f78832e12d9a6d336d4f69fdc06471499862c2bde399ba0a6b4a4b9ef311b
-  languageName: node
-  linkType: hard
-
-"@firebase/util@npm:1.11.0":
-  version: 1.11.0
-  resolution: "@firebase/util@npm:1.11.0"
-  dependencies:
-    tslib: "npm:^2.1.0"
-  checksum: 7f3bc067b3c28a973798c60a4b7bf14e053ef6d4aeee12fe81f4fb17e02aa47f7640c829b99808f9fa2a2ca2fc946cf0887c80741df6c6c03e41d6ab6b8a6317
   languageName: node
   linkType: hard
 
@@ -26372,15 +26331,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/firebase@npm:^3.2.1":
-  version: 3.2.1
-  resolution: "@types/firebase@npm:3.2.1"
-  dependencies:
-    firebase: "npm:*"
-  checksum: a25537dd8596f1cb47370fe3a607b4a196dd868ca833f980da93853b3be28efc75f31bcd0915a2f7f5878946f61672c178e95acfc6e0c9039e234da807c9ddb5
-  languageName: node
-  linkType: hard
-
 "@types/follow-redirects@npm:^1.14.4":
   version: 1.14.4
   resolution: "@types/follow-redirects@npm:1.14.4"
@@ -36981,7 +36931,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"firebase@npm:*, firebase@npm:10.8.0":
+"firebase@npm:10.8.0":
   version: 10.8.0
   resolution: "firebase@npm:10.8.0"
   dependencies:
@@ -42518,7 +42468,6 @@ __metadata:
     "@dnd-kit/utilities": "npm:3.2.2"
     "@emotion/react": "npm:11.14.0"
     "@emotion/styled": "npm:11.14.0"
-    "@firebase/app": "npm:^0.11.1"
     "@fontsource/roboto": "npm:5.1.1"
     "@google/genai": "npm:1.11.0"
     "@grapesjs/react": "npm:^2.0.0"
@@ -42668,7 +42617,6 @@ __metadata:
     "@twilio/voice-sdk": "npm:^2.12.4"
     "@types/amplitude-js": "npm:^8"
     "@types/file-saver": "npm:^2"
-    "@types/firebase": "npm:^3.2.1"
     "@types/js-beautify": "npm:^1"
     "@types/leaflet": "npm:1.9.14"
     "@types/lodash": "npm:^4"
